@@ -246,23 +246,3 @@ int main(void) {
 	free(w);
 	return(0);
 }	
-#include <stdio.h>
-#include <mkl_lapacke.h>
-#include <sys/types.h>
-#include <string.h>
-#include <math.h>
-
-
-long read_input(long *Nt, long *Nz, double *tf, long *Im, char *fname) {
-
-        FILE* fptr=fopen(fname,"r");
-
-        if (fptr==NULL) return 1;
-
-        if (4!=fscanf(fptr,"%ld %ld %lf %ld", Nt, Nz, tf, Im)) {
-                return 1;
-        }
-
-        fclose(fptr);
-        return 0;
-}
